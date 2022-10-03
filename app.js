@@ -12,6 +12,13 @@ const addTwo = (a, b) => {
   console.log(a + b);
 };
 
+// block scope
+let i = 2;
+console.log("let i=2 is availble globally", i);
+for (let i = 0; i < +10; i++) {
+  console.log("i is available on for loop", i);
+}
+
 addTwo(1, 2);
 const firstArray = [1, 2, 3, 4, 5, 5, 6];
 
@@ -25,6 +32,7 @@ const promise = fetch("https://jsonplaceholder.typicode.com/todos/1")
 
 console.log(promise);
 
+// async await
 const testAsync = async () => {
   const response = await axios.get(
     "https://jsonplaceholder.typicode.com/todos"
@@ -45,8 +53,15 @@ const Obj = {
   },
 };
 
+// rest operator
+const restArray = [2, 3, 4, 6, 5];
+const restArrayFunction = (...args) => {
+  console.log(args);
+};
+restArrayFunction(restArray);
+// shallow copy
 const shallowObject = { ...Obj };
 console.log(shallowObject);
-
+// deep copy
 const deepCopyObj = JSON.parse(JSON.stringify(Obj));
 console.log(deepCopyObj);
